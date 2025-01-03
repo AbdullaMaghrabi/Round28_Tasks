@@ -32,8 +32,8 @@ public class TasksClassTest {
         driver.get("https://duckduckgo.com/");
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        WebElement logo = driver.findElement(By.xpath("//header[@class='header_header__3o0p0']//a[@class='header_logoHorizontal__yw4eT header_logoText__rodFL header_logoImg__PFezv']//img"));
-        assertTrue(logo.isDisplayed(), "DuckDuckGo logo is not displayed!");
+        WebElement logo = driver.findElement(By.xpath("//section[not(contains(@class, 'shrink'))]/a/img"));
+        assertTrue(logo.isDisplayed(), "DuckDuckGo logo is displayed!");
         driver.quit();
     }
 
