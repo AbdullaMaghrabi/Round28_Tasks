@@ -43,11 +43,14 @@ public class TimeAssessmentTest {
     public void explicitWaitTest() {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+
         driver.navigate().to("https://www.selenium.dev/selenium/web/dynamic.html");
+
         driver.findElement(By.id("reveal")).click();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("revealed"))).sendKeys("test");
+
         driver.quit();
     }
 
@@ -128,3 +131,4 @@ public class TimeAssessmentTest {
         driver.quit();
     }
 }
+
